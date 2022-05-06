@@ -1,12 +1,12 @@
-const n1 = document.querySelector('#n1') as HTMLInputElement;
-const n2 = document.querySelector('#n2') as HTMLInputElement;
-const botao = document.querySelector('#somar')
-const res = document.querySelector('#res')
+let numero1 = document.querySelector('#n1') as HTMLInputElement;
+let numero2 = document.querySelector('#n2') as HTMLInputElement;
+let btn = document.querySelector('#somar') 
+let retorno = document.querySelector('#res') 
 
-function somar(n1, n2){
+function somarValores(n1: number, n2: number) {
     return n1 + n2;
 }
 
-botao.addEventListener('click', ()=>{
-    res.innerHTML = somar(n1.value, n2.value)
+btn.addEventListener('click', ()=>{
+    retorno.innerHTML = somarValores(+numero1.value, +numero2.value).toString();
 })

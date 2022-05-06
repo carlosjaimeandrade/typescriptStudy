@@ -1,2 +1,7 @@
 //como converter o codigo TS para JSON para
 tsc script.ts
+
+// precisamos previr que crie um arquivo caso esteja um erro
+tsc script.ts --noEmitOnError
+
+// o any é qualquer é como se solicitasse ignorar um arquivo uma tipagem

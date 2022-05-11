@@ -1,0 +1,38 @@
+//como converter o codigo TS para JSON para
+tsc script.ts
+
+// precisamos previr que crie um arquivo caso esteja um erro
+tsc script.ts --noEmitOnError
+
+// o any é qualquer é como se solicitasse ignorar um arquivo uma tipagem
+
+//Usando o --watchMode no arquivo
+tsc src/script.ts -w
+
+//Criando o arquivo tsconfig.json
+tsc --init // cria o arquivo
+tsc -w // entra em watchmode automaticamente para todos arquivos
+
+// colocar isso tsconfig.json para ignorar a conversao para js
+"exclude": [
+    
+]
+// dentro do tsconfig.json quando usar  tsc ele irá copelar apenas essa pasta.
+"include":[
+    "src/script.js" 
+  ]
+
+// dentro do tsconfig.json
+o "target" ele ira gerar o codigo final com base ES
+o "lib" ele é a parte onde adicona as biblioteca que da suporte para o elementos exempolo "lib" : ["DOM"]
+
+//rootDir e outDir
+rootDir - aqui você incara para ele manter a estrtura de pasta antigas
+outDir  - aqui você irá informar onde será a saida dos arquivos JS
+
+"removeComments" ira remover os comentarios
+"noEmit" não irá geraar os arquivos 
+"noEmitOnError" não ira emitir o arquivo se tiver erro, nao vem no arquivo origin do config
+"noUnusedLocals" significa avisara quando ter uma variavel e não foi usada, isso quando forr dentro de um escopo {}
+"noUnusedParameters" avisa quando você não usa um parametro de uma função
+ 
